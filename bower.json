@@ -1,0 +1,25 @@
+{
+  "name": "wifi-chat",
+  "description": "This is an attempt to build an app using an Angular front end, API endpoints, and a nosql database. Wifi chat will allow you to run a server on localhost and chat with others on your same wifi.",
+  "main": "gulpfile.js",
+  "authors": [
+    "lsteel <lorinsteel@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/lsteel/Wifi-Chat",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angularfire": "^1.2.0",
+    "bootstrap": "^3.3.6",
+    "angular": "^1.5.3",
+    "firebase": "^2.4.2",
+    "angular-route": "^1.5.3"
+  }
+}
