@@ -1,19 +1,23 @@
 angular
 .module('appMessages', [])
 .factory('messages', [
-  '$firebaseObject',
-  function($firebaseObject) {
-    var ref = new Firebase("https://chat-now-app.firebaseio.com");
-    var fireObj = $firebaseObject(ref);
+  '$firebaseArray',
+  function($firebaseArray) {
+    var ref = new Firebase("https://chat-now-app.firebaseio.com/messages/");
+    var fireArr = $firebaseArray(ref);
 
     var messages = {
-      
-      get: function() {
 
+      get: function(cb) {
+        fireArr.$watch(function(event) {
+          cb(fireArr);
+        });
       },
 
-      post: function() {
-
+      post: function(inputs, cb) {
+        fireArr.$add(inputs).then(function(ref) {
+          cb();
+        });
       }
 
     };
